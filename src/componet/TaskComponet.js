@@ -6,6 +6,7 @@ import {
   Typography,
   IconButton,
   Stack,
+  useTheme,
 } from "@mui/material";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
@@ -19,6 +20,7 @@ import EditFormDialog from "./editFormDialog";
 
 export default function TaskItem() {
   const Task = useContext(ToDoListContexts);
+  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [openEditDialog, setOpenEditDialog] = React.useState(false);
 
@@ -46,8 +48,8 @@ export default function TaskItem() {
         }}
       >
         <CardContent
-          style={{
-            color: "white",
+          sx={{
+            color: theme.palette.primary.contrastText,
             padding: "0",
           }}
         >
@@ -74,35 +76,53 @@ export default function TaskItem() {
             </Stack>
             <CardActions sx={{ justifyContent: "flex-end" }}>
               <IconButton
-                color="primary"
                 className="iconButton"
-                style={{
-                  backgroundColor: "white",
-                  border: "3px solid #1769aaff",
+                sx={{
+                  backgroundColor: theme.palette.background.default,
+                  border: `3px solid ${theme.palette.primary.main}`,
+                  "&:hover": {
+                    backgroundColor: theme.palette.hover.darkGray,
+                  },
                 }}
                 onClick={() => setOpenEditDialog(true)}
               >
-                <EditOutlinedIcon sx={{ color: "primary" }} />
+                <EditOutlinedIcon sx={{ color: theme.palette.primary.main }} />
               </IconButton>
+
               <IconButton
-                style={{ backgroundColor: "white", border: "3px red solid" }}
-                color="error"
-                // onClick={Task.onDelete}
+                sx={{
+                  backgroundColor: theme.palette.background.default,
+                  border: `3px solid ${theme.palette.secondary.dark}`,
+                  "&:hover": {
+                    backgroundColor: theme.palette.hover.darkGray,
+                  },
+                }}
                 onClick={handleClickOpen}
               >
-                <DeleteOutlinedIcon />
+                <DeleteOutlinedIcon
+                  sx={{ color: theme.palette.secondary.dark }}
+                />
               </IconButton>
               <IconButton
                 className="iconButton"
                 color="primary"
-                style={{
-                  backgroundColor: Task.isDone ? "#8bc34aff" : "white",
-                  border: "3px solid #8bc34aff",
+                sx={{
+                  backgroundColor: Task.isDone
+                    ? theme.palette.success.main
+                    : theme.palette.background.default,
+                  border: `3px solid ${theme.palette.success.main}`,
+                  "&:hover": {
+                    backgroundColor: theme.palette.hover.darkGray,
+                  },
                 }}
                 onClick={Task.onToggleTaskDone}
               >
                 <CheckIcon
-                  sx={{ color: Task.isDone ? "white" : "#8bc34aff" }}
+                  sx={{
+                    color: Task.isDone
+                      ? theme.palette.background.default
+                      : theme.palette.success.main,
+                  }}
                 />
               </IconButton>
             </CardActions>

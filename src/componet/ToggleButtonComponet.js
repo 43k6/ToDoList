@@ -1,7 +1,6 @@
 import * as React from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { deepOrange, deepPurple } from "@mui/material/colors";
 
 export default function ToggleButtonComponet({ onChange }) {
   const [alignment, setAlignment] = React.useState("all");

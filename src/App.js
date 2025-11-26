@@ -1,23 +1,8 @@
 import "./App.css";
 import ToDoList from "./componet/ToDoList";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { orange, red } from "@mui/material/colors";
 
 function App() {
-  // const theme = createTheme({
-  //   status: {
-  //     danger: orange[500],
-  //   },
-  //   palette: {
-  //     primary: {
-  //       main: "#dd2c00",
-  //     },
-  //     secondary: {
-  //       main: red[800],
-  //     },
-  //   },
-  // });
-
   const theme = createTheme({
     palette: {
       primary: {
@@ -33,7 +18,7 @@ function App() {
         contrastText: "#FFFFFF",
       },
       success: {
-        main: "#16A34A",
+        main: "#8bc34aff",
         light: "#4ADE80",
         dark: "#15803D",
         contrastText: "#FFFFFF",
@@ -41,10 +26,15 @@ function App() {
       background: {
         default: "#FFFFFF",
         paper: "#F9FAFB",
+        dark: "#191b1f",
       },
       text: {
         primary: "#1F2937",
         secondary: "#4B5563",
+      },
+      hover: {
+        gray: "#E5E7EB", // Tailwind gray-200
+        darkGray: "#D1D5DB", // Tailwind gray-300
       },
     },
   });
@@ -54,7 +44,7 @@ function App() {
       <div
         style={{
           boxSizing: "border-box",
-          backgroundColor: "#191b1f",
+          backgroundColor: theme.palette.background.dark,
           width: "100vw",
           height: "100vh",
           padding: "15px",

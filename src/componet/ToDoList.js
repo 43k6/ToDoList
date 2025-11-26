@@ -84,7 +84,7 @@ export default function ToDoList() {
     <Container
       maxWidth="sm"
       style={{
-        backgroundColor: "#fff",
+        backgroundColor: "background",
         color: " rgba(0, 0, 0, 0.87)",
         minWidth: "275px",
         padding: "0",
