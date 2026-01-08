@@ -1,7 +1,7 @@
 # مهامي - My Tasks App 📝
 
 <p align="center">
-<img src="https://github.com/43k6/ToDoList/main/assets/MainScrren.jpg" width="600" alt="Main Dashboard">
+<img src="assets/MainScrren.jpg" width="600" alt="Main Dashboard">
 
 </p>
 
@@ -43,6 +43,6 @@ A professional To-Do List application built with **React** and **Material-UI**. 
 
 ## ⚙️ How to Run | التشغيل
 
-1. Clone the repo: `git clone <your-url>`
+1. Clone the repo: `git clone https://github.com/43k6/ToDoList`
 2. Install dependencies: `npm install`
 3. Start the project: `npm start`
